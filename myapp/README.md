@@ -1,6 +1,6 @@
 ## Developer Guide
 
-#### VMを作成(Optional)
+#### create VM(Optional)
 
 ##### Check Python Version
 >python --version

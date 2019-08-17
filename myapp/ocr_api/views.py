@@ -78,7 +78,7 @@ def get_ocred_image(request):
     if request.method == "GET":
         serializer = JsonOCRInputModelSerializer(data, many = True)
         imagePath = "ocr_api/img/"
-        imageName = "sample_tokyo_marin_written.jpg"
+        imageName = "sample.jpg"
             
         try:
             drawLinesOnImages(imagePath, imageName, serializer.data)
