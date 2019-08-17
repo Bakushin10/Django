@@ -1,0 +1,7 @@
+{
+    "response" :
+        [
+            {"field": 1, "hasField": "True", "coordinates": [{"y": 23, "x": 72}, {"y": 23, "x": 91}, {"y": 33, "x": 91}, {"y": 33, "x": 72}], "text": "\u4fdd\u967a"},
+            {"field": 2, "hasField": "True", "coordinates": [{"y": 23, "x": 93}, {"y": 23, "x": 110}, {"y": 33, "x": 110}, {"y": 33, "x": 93}], "text": "\u8a3c\u5238"}        
+        ]
+}
