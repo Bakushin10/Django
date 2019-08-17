@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from lynx_api_ocr_invoking.models import OCRInputModel, JsonOCRInputModel
+from ocr_api.models import OCRInputModel, JsonOCRInputModel
 
 class OCRInputModelSerializer(serializers.ModelSerializer):
     class Meta:

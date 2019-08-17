@@ -16,13 +16,10 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 from django.views.generic.base import TemplateView
-from lynx_ui.views import get_data, create_data #,  post_ocr_results, get_ocr_results
-from lynx_api_ocr_invoking.views import post_dummy_data, get_dummy_data, post_ocr_results, get_ocr_results, get_ocred_image
+from ocr_api.views import post_dummy_data, get_dummy_data, post_ocr_results, get_ocr_results, get_ocred_image
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^getData/', get_data),
-    url(r'^create_data/', create_data),
     url(r'^dummydata/new/', post_dummy_data),
     url(r'^dummydata/', get_dummy_data),
     url(r'^ocr_results/new', post_ocr_results),

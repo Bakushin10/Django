@@ -4,8 +4,8 @@ from django.shortcuts import render
 from django.shortcuts import render, HttpResponseRedirect
 from django.http import HttpResponse, JsonResponse
 
-from lynx_api_ocr_invoking.models import OCRInputModel, JsonOCRInputModel
-from lynx_api_ocr_invoking.serializers import OCRInputModelSerializer, JsonOCRInputModelSerializer
+from ocr_api.models import OCRInputModel, JsonOCRInputModel
+from ocr_api.serializers import OCRInputModelSerializer, JsonOCRInputModelSerializer
 from django.views.decorators.csrf import csrf_exempt
 
 
@@ -14,7 +14,7 @@ def post_dummy_data(request):
     """
         basic API call for a POST method
         it will post dummy data
-        based on the OCRInputModel defined lynx_api_ocr_invoking.models
+        based on the OCRInputModel defined ocr_api.models
     """
     if request.method == "POST":
         data = {"ocrJson" : "Two"}
@@ -77,7 +77,7 @@ def get_ocred_image(request):
 
     if request.method == "GET":
         serializer = JsonOCRInputModelSerializer(data, many = True)
-        imagePath = "lynx_api_ocr_invoking/img/"
+        imagePath = "ocr_api/img/"
         imageName = "sample_tokyo_marin_written.jpg"
             
         try:
@@ -102,8 +102,8 @@ def readJson():
         read JSON data from local file 
     """
     
-    #path = "lynx_api_ocr_invoking/json/test.json"
-    path = "lynx_api_ocr_invoking/json/ocrReturnValues.json"
+    #path = "ocr_api/json/test.json"
+    path = "ocr_api/json/ocrReturnValues.json"
     #return ""
     
     

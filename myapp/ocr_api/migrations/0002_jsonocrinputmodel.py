@@ -6,7 +6,7 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('lynx_api_ocr_invoking', '0001_initial'),
+        ('ocr_api', '0001_initial'),
     ]
 
     operations = [
