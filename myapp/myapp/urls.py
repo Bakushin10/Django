@@ -17,6 +17,7 @@ from django.conf.urls import url
 from django.contrib import admin
 from django.views.generic.base import TemplateView
 from ocr_api.views import post_dummy_data, get_dummy_data, post_ocr_results, get_ocr_results, get_ocred_image
+from weather.views import get_weather_API
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -25,6 +26,7 @@ urlpatterns = [
     url(r'^ocr_results/new', post_ocr_results),
     url(r'^ocr_results/', get_ocr_results),
     url(r'^ocr_image/', get_ocred_image),
+    url(r'^weatherapi/', get_weather_API),
     url(r'index2/', TemplateView.as_view(template_name="index2.html"), name="home"),
     
     # default template
