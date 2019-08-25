@@ -14,21 +14,23 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.conf.urls import url
+from django.urls import path
 from django.contrib import admin
 from django.views.generic.base import TemplateView
-from ocr_api.views import post_dummy_data, get_dummy_data, post_ocr_results, get_ocr_results, get_ocred_image
+from ocr_api.views import post_dummy_data, get_dummy_data, post_ocr_results, get_ocr_results, get_ocred_image, get_ocr_results_by_id
 from weather.views import get_weather_API
 
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
-    url(r'^dummydata/new/', post_dummy_data),
-    url(r'^dummydata/', get_dummy_data),
-    url(r'^ocr_results/new', post_ocr_results),
-    url(r'^ocr_results/', get_ocr_results),
-    url(r'^ocr_image/', get_ocred_image),
-    url(r'^weatherapi/', get_weather_API),
+    path('admin/', admin.site.urls),
+    path('dummydata/new/', post_dummy_data, name = "post_dummy_data"),
+    path('dummydata/', get_dummy_data, name = "get_dummy_data"),
+    path('ocr_results/new', post_ocr_results, name = "post_ocr_results"),
+    path('ocr_results/<int:username>/', get_ocr_results_by_id, name = "get_ocr_results_by_id"),
+    path('ocr_results/', get_ocr_results, name = "get_ocr_results"),
+    path('ocr_image/', get_ocred_image, name = "get_ocred_image"),
+    path('weatherapi/', get_weather_API, name = "get_weather_API"),
     url(r'index2/', TemplateView.as_view(template_name="index2.html"), name="home"),
     
     # default template
-    #url(r'^.*', TemplateView.as_view(template_name="index.html"), name="home")
+    #path('.*', TemplateView.as_view(template_name="index.html"), name="home")
 ]

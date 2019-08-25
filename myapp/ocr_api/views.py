@@ -68,6 +68,19 @@ def get_ocr_results(request):
         return JsonResponse(dataToDisplay, safe = False)
 
 @csrf_exempt
+def get_ocr_results_by_id(request, username):
+    """
+        retrieve fake OCR data by id
+    """
+    if request.method != "GET":
+        return HttpResponse("GET request only")
+
+    data = JsonOCRInputModel.objects.filter(field=username)
+    if len(data) == 0:
+        return HttpResponse("no data found")
+    return HttpResponse(data.values())
+
+@csrf_exempt
 def get_ocred_image(request):
     """
         retrieve fake OCR data from an endpoint

@@ -6,6 +6,11 @@ from django.http import HttpResponse, JsonResponse
 @csrf_exempt
 def get_weather_API(request):
 
+    """
+    API scourse
+    https://openweathermap.org/api/forecast30
+    """
+
     if request.method != "GET":
         return HttpResponse("GET request only")
     
