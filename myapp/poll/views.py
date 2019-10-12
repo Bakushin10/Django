@@ -21,7 +21,7 @@ class PostViewSet(APIView):
     def post(self, request):
         # queryset = Post.objects.all()
         # serializer_class = PostSerializer
-        queryset = Post.objects.all()
+        
         serializer_class = PostSerializer(data=request.data)
         if serializer_class.is_valid():
             serializer_class.save()
