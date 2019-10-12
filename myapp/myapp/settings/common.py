@@ -49,7 +49,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'ocr_api',
-    'weather'
+    'weather',
+    'poll'
 ]
 
 MIDDLEWARE = [
