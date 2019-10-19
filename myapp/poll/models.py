@@ -9,12 +9,12 @@ class User(models.Model):
 class NumList(models.Model):
   #num1 = models.IntegerField(default="", blank=False)
   #num2 = models.IntegerField(default="", blank=False)
-  num1 = models.IntegerField(default=-1, null=True, blank=True)
-  num2 = models.IntegerField(default=-1, null=True, blank=True)
-  num3 = models.IntegerField(default=-1, null=True, blank=True)
+  num1 = models.IntegerField(null=False, blank=False)
+  num2 = models.IntegerField(null=False, blank=False)
+  num3 = models.IntegerField(null=False, blank=False)
 
 class Post(models.Model):
-  title = models.CharField(max_length=128, blank=False)
+  title = models.CharField(max_length=10, blank=False)
   body = models.TextField()
   author = models.ForeignKey(User, on_delete=models.CASCADE)
   nums = models.ForeignKey(NumList, on_delete=models.CASCADE)

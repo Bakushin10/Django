@@ -11,7 +11,7 @@ class UserSerializer(serializers.ModelSerializer):
 class NumListSerializer(serializers.ModelSerializer):
     class Meta:
         model = NumList
-        fields = ('id', 'num1', 'num2')
+        fields = ('id', 'num1', 'num2', "num3")
         extra_kwargs = { 'id': { 'read_only': False } }
 
 
