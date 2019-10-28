@@ -14,6 +14,6 @@ class Poll_test(APITestCase):
         factory = APIRequestFactory()
         view = PostViewSet.as_view()
         request = factory.post('/poll/Tokyo/')
-        response = view(request,location = "tokyo")
+        response = view(request, location = "tokyo") # passing kwags {"location" : "tokyo"}
         self.assertEqual(response.status_code, 200)
 
