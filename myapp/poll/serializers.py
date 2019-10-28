@@ -15,6 +15,8 @@ class NumListSerializer(serializers.ModelSerializer):
         extra_kwargs = { 'id': { 'read_only': False } }
 
 
+
+
 class PostSerializer(serializers.ModelSerializer):
     # author is now UserSerializer object
     author = UserSerializer()

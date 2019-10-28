@@ -17,4 +17,3 @@ class WeatherViewSet(APIView):
         print(city_weather)
         return JsonResponse(city_weather)
 
-

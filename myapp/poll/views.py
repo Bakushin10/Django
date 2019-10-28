@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from rest_framework import viewsets
+from rest_framework import viewsets, status
 from .models import User, Post
 from .serializers import UserSerializer, PostSerializer
 from rest_framework.views import APIView
@@ -13,9 +13,7 @@ class UserViewSet(viewsets.ModelViewSet):
 
 class PostViewSet(APIView):
 
-
-    def get(self, request, **kwargs):
-
+    def post(self, request, **kwargs):
         base_URL = request._request._current_scheme_host
         weatherLocation = kwargs.get("location", None)
         print("{} {}".format("weatherLocation", weatherLocation))
@@ -23,27 +21,27 @@ class PostViewSet(APIView):
             weatherAPITemplate = base_URL + "/weather/{}/"
             print(weatherAPITemplate.format(weatherLocation))
             city_weather = requests.post(weatherAPITemplate.format(weatherLocation), params=request.POST)
-            return HttpResponse(city_weather)
+            return Response(data = city_weather, status = status.HTTP_200_OK)
 
         queryset = Post.objects.all()
         serializer = PostSerializer(queryset, many=True)
-        return Response(serializer.data)
+        return Response(data = serializer.data, status = status.HTTP_400_BAD_REQUEST)
 
         
-    def post(self, request, **kwargs):
-        # queryset = Post.objects.all()
-        # serializer_class = PostSerializer
+    # def post(self, request, **kwargs):
+    #     # queryset = Post.objects.all()
+    #     # serializer_class = PostSerializer
 
-        serializer_class = PostSerializer(data=request.data)
-        print(serializer_class)
-        if not serializer_class.is_valid():
-            print("invalid data")
-            print(serializer_class.data)
-            return HttpResponse("requested model invalid")
+    #     serializer_class = PostSerializer(data=request.data)
+    #     print(serializer_class)
+    #     if not serializer_class.is_valid():
+    #         print("invalid data")
+    #         print(serializer_class.data)
+    #         return HttpResponse("requested model invalid")
         
-        print("valid data")
-        print(serializer_class.data)
-        #serializer_class.save()
-        return HttpResponse(serializer_class)
+    #     print("valid data")
+    #     print(serializer_class.data)
+    #     #serializer_class.save()
+    #     return HttpResponse(serializer_class)
 
 
