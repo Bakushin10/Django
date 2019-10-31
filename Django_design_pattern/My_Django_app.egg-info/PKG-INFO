@@ -1,0 +1,14 @@
+Metadata-Version: 1.2
+Name: My-Django-app
+Version: 1.0.0
+Summary: my Django app
+Home-page: https://github.com/Bakushin10/Django
+Author: shin
+Author-email: me@example.com
+License: UNKNOWN
+Project-URL: Bug Tracker, https://github.com/Bakushin10/Django
+Project-URL: Documentation, https://github.com/Bakushin10/Django
+Project-URL: Source Code, https://github.com/Bakushin10/Django
+Description: UNKNOWN
+Keywords: hello world example examples
+Platform: UNKNOWN

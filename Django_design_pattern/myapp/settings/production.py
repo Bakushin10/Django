@@ -1,0 +1,1 @@
+from myapp.settings.common import *
