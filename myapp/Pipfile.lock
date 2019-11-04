@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "d04972a8194264a4297033358d5e9c35a64775de976d6222b6ce8aaebbecc830"
+            "sha256": "5628bf6e867af54590c1d613aa6027c59ff780c5e8a468cbb9baa5018425cc76"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -279,7 +279,7 @@
         },
         "setuptools": {
             "name": "pypi",
-            "version": "==41.2.0"
+            "version": "==41.6.0"
         },
         "six": {
             "hashes": [
