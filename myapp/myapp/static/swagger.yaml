@@ -1,0 +1,49 @@
+swagger: '2.0'
+info:
+  title: API Lists
+  description: ''
+  version: ''
+host: 'localhost:8000'
+schemes:
+  - http
+paths:
+  '/poll/{location}/':
+    post:
+      operationId: poll_create
+      responses:
+        '201':
+          description: ''
+      parameters:
+        - name: location
+          required: true
+          in: path
+          description: ''
+          type: string
+      tags:
+        - poll
+  /swagger/:
+    get:
+      operationId: swagger_list
+      responses:
+        '200':
+          description: ''
+      parameters: []
+      tags:
+        - swagger
+  '/weather/{location}/':
+    post:
+      operationId: weather_create
+      responses:
+        '201':
+          description: ''
+      parameters:
+        - name: location
+          required: true
+          in: path
+          description: ''
+          type: string
+      tags:
+        - weather
+securityDefinitions:
+  basic:
+    type: basic
