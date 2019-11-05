@@ -19,8 +19,12 @@ from django.contrib import admin
 from django.views.generic.base import TemplateView
 from ocr_api.views import post_dummy_data, get_dummy_data, post_ocr_results, get_ocr_results, get_ocred_image, get_ocr_results_by_id
 #from poll.urls import router as polls_router
+from rest_framework_swagger.views import get_swagger_view
+
+schema_view = get_swagger_view(title='API Lists')
 
 urlpatterns = [
+    path('swagger/', schema_view),
     path('admin/', admin.site.urls),
     path('poll/<slug:location>/', include('poll.urls')),
     path('weather/<slug:location>/', include('weather.urls')),
