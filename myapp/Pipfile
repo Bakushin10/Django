@@ -31,6 +31,7 @@ pillow = { version = "==6.1.0", name = "pypi"}
 setuptools = { version = "==41.6.0", name = "pypi"}
 rxpy = { version = "==0.1.0", name = "pypi"}
 coverage = { version = "==4.5.4", name = "pypi"}
+django-rest-swagger = { version = "==2.2.0", name = "pypi"}
 
 django-extensions = "*"
 
