@@ -39,7 +39,9 @@ django-extensions = "*"
 python_version = "3.6"
 
 [scripts]
-start = "python manage.py runserver"
+start_dev = "python manage.py runserver"
+start_dev_in_prod_env = "python manage.py runmodwsgi --reload-on-changes"
+start_prod = "python manage.py runmodwsgi"
 makemigrations = "python manage.py makemigrations"
 migrate = "python manage.py migrate"
 build = "python setup.py bdist_wheel"
